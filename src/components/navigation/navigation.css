@@ -1,0 +1,23 @@
+.navigation {
+    width: 250px;
+    height: 100vh;
+    float: left;
+    background-color: #282c34;
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    top: 8vh;
+}
+
+.ant-menu-item-active {
+    background-color: #565658;
+}
+
+.ant-menu-item-selected {
+    background-color: #565658;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 10px;
+}
