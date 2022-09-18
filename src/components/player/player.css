@@ -1,0 +1,16 @@
+.player-parent {
+    width: 100vw;
+    height: 100vh;
+    top: 8vh;
+    position: absolute;
+    background-color: #1f2228;
+    overflow-x: hidden;
+}
+
+.youtube-player {
+    margin-left: 20%;
+}
+
+.youtube-player-parent {
+    background-color: black;
+}
