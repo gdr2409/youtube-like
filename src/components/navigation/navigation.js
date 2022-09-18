@@ -1,5 +1,6 @@
 
 import './navigation.css';
+import categories from '../../datastore/categories';
 
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
@@ -14,20 +15,27 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
-const items = [
-  getItem('Navigation One', 'sub1', <MailOutlined />),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />),
-  getItem('Navigation Three', 'sub4', <SettingOutlined />),
-];
+const items = [];
 
+for (const category of categories) {
+  items.push(
+    getItem(category, category, <AppstoreOutlined />),
+  );
+}
 
-function Navigation() {
+function Navigation(props) {
+  const { setCategory } = props;
+
+  function onMenuItemSelected ({ item, key, keyPath, selectedKeys, domEvent }) {
+    setCategory(key);
+  }
 	return (
 		<div className='navigation'>
 			<Menu
-				defaultSelectedKeys={['sub1']}
+				defaultSelectedKeys={['Home']}
 				mode='vertical'
 				items={items}
+        onSelect={onMenuItemSelected}
 			/>
 		</div>
 	);

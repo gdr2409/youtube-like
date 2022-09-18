@@ -5,6 +5,7 @@ import videos  from '../../datastore/videos';
 import './home.css';
 
 import { Card, Col, Row } from 'antd';
+import { useState } from 'react';
 const { Meta } = Card;
 
 
@@ -12,10 +13,14 @@ const cardWidth = 28;
 // const cardMargin = 2;
 const colNumber = 3;
 
-function cardRender (data) {
+function cardRender (category, data) {
 	const arrangedData = [];
-	while(data.length) {
-		arrangedData.push(data.splice(0, colNumber));
+	let dataToUse = [...data];
+	if (category && category !== 'Home') {
+		dataToUse = dataToUse.filter((d) => d.category === category);
+	}
+	while(dataToUse.length) {
+		arrangedData.push(dataToUse.splice(0, colNumber));
 	}
 	const toRet = [];
 	for (const row of arrangedData) {
@@ -53,13 +58,17 @@ function cardRender (data) {
 }
 
 function Home() {
+	const [category, setCategory] = useState();
+
 	return (
 		<>
 			<Header />
-			<Navigation />
+			<Navigation
+				setCategory={setCategory}
+			/>
 			<div className='main-content-parent'>
 				<div className='main-content'>
-					{cardRender(videos)}
+					{cardRender(category, videos)}
 				</div>
 			</div>
 		</>
