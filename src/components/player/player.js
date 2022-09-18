@@ -3,9 +3,12 @@ import CustomLayout from '../layout/layout';
 import './player.css';
 
 import YouTube from 'react-youtube';
+import { useSearchParams } from 'react-router-dom';
 
 
 function Player(props) {
+	const [searchParams, setSearchParams] = useSearchParams();
+	const videoId = searchParams.get('id');
 
 	const opts = {
 		width: '70%',
@@ -23,7 +26,7 @@ function Player(props) {
 			<div className='player-parent'>
 				<div className='youtube-player-parent'>
 					<div className='youtube-player'>
-						<YouTube videoId='2g811Eo7K8U' opts={opts} onReady={_onReady} />
+						<YouTube videoId={videoId} opts={opts} onReady={_onReady} />
 					</div>
 				</div>
 			</div>
