@@ -1,0 +1,38 @@
+.custom-modal {
+    position: fixed;
+    background-color: #282c34;
+    height: 60vh;
+    font-size: calc(10px + 0.5vmin);
+    color: white;
+    width: 52vw;
+    z-index: 200;
+    top: 20vh;
+    left: 30vw;
+}
+
+.ant-form-item {
+    margin-top: -3vh;
+}
+
+.ant-form-item-explain-error {
+    margin-top: 5px;
+    color: red;
+}
+
+.custom-modal-input {
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.custom-modal-input:focus {
+    outline: none;
+}
+
+.custom-modal-button {
+    border-radius: 7px;
+}
+
+.custom-modal-add-video-form {
+    margin-left: 5vw;
+}

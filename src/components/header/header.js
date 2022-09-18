@@ -3,15 +3,11 @@ import './header.css';
 
 import { Input } from 'antd';
 import { VideoCameraAddOutlined, BellOutlined, UserOutlined } from '@ant-design/icons';
-import { useState } from 'react';
 const { Search } = Input;
 
+function Header(props) {
+	const { addVideoClicked } = props;
 
-const addVideoClicked = function () {
-	alert('Add Video Clicked');
-}
-
-function Header() {
 	return (
 			<div className='header'>
 				<div className='header-logo'> {/*Logo div*/}

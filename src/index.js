@@ -1,20 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Home from './components/home/home';
 import reportWebVitals from './reportWebVitals';
+import Player from './components/player/player';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
-          {/* <Route index element={<Home />} /> */}
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
-        </Route>
+        <Route path="/" element={<Home />}/>
+        <Route path="/play" element={<Player />}/>
       </Routes>
     </BrowserRouter>
 );

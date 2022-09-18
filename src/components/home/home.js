@@ -1,8 +1,8 @@
 
-import Header from '../header/header';
-import Navigation from '../navigation/navigation';
-import videos  from '../../datastore/videos';
+import VideoStore from '../../datastore/videos';
 import './home.css';
+import CustomLayout from '../layout/layout';
+import Navigation from '../navigation/navigation';
 
 import { Card, Col, Row } from 'antd';
 import { useState } from 'react';
@@ -62,13 +62,13 @@ function Home() {
 
 	return (
 		<>
-			<Header />
+			<CustomLayout/>
 			<Navigation
 				setCategory={setCategory}
 			/>
 			<div className='main-content-parent'>
 				<div className='main-content'>
-					{cardRender(category, videos)}
+					{cardRender(category, VideoStore.videos)}
 				</div>
 			</div>
 		</>
