@@ -3,7 +3,7 @@ import './navigation.css';
 import categories from '../../datastore/categories';
 
 import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined } from '@ant-design/icons';
 
 function getItem(label, key, icon, children, type) {
   return {
