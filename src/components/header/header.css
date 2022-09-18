@@ -54,3 +54,13 @@ button {
 .anticon {
     margin: 2vh 1vw;
 }
+
+.header-extra-action {
+    float: left;
+    height: 8vh;
+    width: 5vw;
+}
+
+.header-extra-action:hover {
+    font-size: 120%;
+}
